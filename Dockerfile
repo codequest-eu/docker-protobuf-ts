@@ -6,3 +6,4 @@ WORKDIR $CODE_HOME
 ADD ./package.json $CODE_HOME
 RUN npm install
 ADD . $CODE_HOME
+ENTRYPOINT ["/code/generate.sh"]
