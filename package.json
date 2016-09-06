@@ -1,0 +1,23 @@
+{
+  "name": "docker-protobuf-ts",
+  "version": "1.0.0",
+  "description": "this will generate proto headers for TS",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codequest-eu/docker-protobuf-ts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codequest-eu/docker-protobuf-ts/issues"
+  },
+  "homepage": "https://github.com/codequest-eu/docker-protobuf-ts#readme",
+  "dependencies": {
+    "proto2ts": "^2.0.0",
+    "protobufjs": "^5.0.1"
+  }
+}
