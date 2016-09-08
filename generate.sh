@@ -1,28 +1,23 @@
 #!/usr/bin/env ash
 
-# -p - proto file path
-# -j - json file path
-# -d - destination file path
+# -p - proto file(s)
+# -d - destination dir
 while [[ $# -gt 1 ]]
 do
 key="$1"
 
 case $key in
     -p)
-    PROTO_FILE="$2"
-    shift # past argument
-    ;;
-    -j)
-    JSON_FILE="$2"
+    PROTO_FILES="$2"
     shift # past argument
     ;;
     -d)
-    TS_FILE="$2"
+    DESTINATION_DIR="$2"
     shift # past argument
     ;;
 esac
 shift # past argument or value
 done
 
-$CODE_HOME/node_modules/protobufjs/bin/pbjs $PROTO_FILE > $JSON_FILE
-node node_modules/proto2ts/command.js --file $JSON_FILE > $TS_FILE
+$CODE_HOME/node_modules/protobufjs/bin/pbjs $PROTO_FILES > $DESTINATION_DIR/proto.json
+node node_modules/proto2ts/command.js --file $DESTINATION_DIR/proto.json > $DESTINATION_DIR/proto.d.ts
